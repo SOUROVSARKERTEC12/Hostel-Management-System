@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.AdminController">
+    <children>
+        <TabPane prefHeight="720.0" prefWidth="1500.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Admin">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox layoutX="321.0" prefHeight="681.0" prefWidth="1175.0">
+                                    <children>
+                                        <TableView fx:id="studenttable" onMouseClicked="#ClickOnShow" prefHeight="681.0" prefWidth="1175.0">
+                                            <columns>
+                                                <TableColumn fx:id="idcolumn" prefWidth="33.0" text="ID" />
+                                                <TableColumn fx:id="rollnumbercolumn" prefWidth="100.0" text="Roll No" />
+                                                <TableColumn fx:id="namecolumn" prefWidth="136.0" text="Name" />
+                                                <TableColumn fx:id="emailcolumn" prefWidth="146.0" text="Email" />
+                                                <TableColumn fx:id="dobcolumn" prefWidth="75.0" text="DOB" />
+                                    <TableColumn fx:id="deptcolumn" prefWidth="78.0" text="Department" />
+                                    <TableColumn fx:id="Batchcolumn" prefWidth="86.0" text="Batch" />
+                                    <TableColumn fx:id="RoomNocolumn" prefWidth="68.0" text="Room No" />
+                                    <TableColumn fx:id="GarduianNocolumn" prefWidth="117.0" text="Garduian Name" />
+                                    <TableColumn fx:id="Addresscolumn" prefWidth="90.0" text="Address" />
+                                    <TableColumn fx:id="Phonecolumn" prefWidth="102.0" text="Contact No" />
+                                    <TableColumn fx:id="Gendercolumn" prefWidth="105.0" text="Gender" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </HBox>
+                                <VBox layoutX="-1.0" layoutY="2.0" prefHeight="679.0" prefWidth="320.0">
+                                    <children>
+                              <TextField fx:id="searchBox" onInputMethodTextChanged="#search" onKeyReleased="#search" prefHeight="31.0" prefWidth="231.0" promptText="Search" style="-fx-background-radius: 15;" />
+                                        <Label alignment="CENTER" contentDisplay="TOP" prefHeight="0.0" prefWidth="300.0" text="Enter Student Details">
+                                            <padding>
+                                                <Insets top="5.0" />
+                                            </padding>
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                        </Label>
+                                        <TextField fx:id="id" prefHeight="31.0" prefWidth="239.0" promptText="Hostel Registration ID" style="-fx-background-radius: 15;" />
+                                        <TextField fx:id="rollnumber" prefHeight="31.0" prefWidth="237.0" promptText="Roll No" style="-fx-background-radius: 15;" />
+                                        <TextField fx:id="name" prefHeight="31.0" prefWidth="235.0" promptText="Name" style="-fx-background-radius: 15;" />
+                                        <TextField fx:id="email" prefHeight="31.0" prefWidth="231.0" promptText="Email" style="-fx-background-radius: 15;" />
+                                        <DatePicker fx:id="dob" prefHeight="31.0" prefWidth="189.0" promptText="Date of Birth" style="-fx-background-radius: 3;" />
+                              <TextField fx:id="Department" prefHeight="31.0" prefWidth="231.0" promptText="Department" style="-fx-background-radius: 15;" />
+                              <TextField fx:id="Batch" prefHeight="31.0" prefWidth="231.0" promptText="Batch" style="-fx-background-radius: 15;" />
+                              <TextField fx:id="RoomNo" prefHeight="31.0" prefWidth="231.0" promptText="Room No" style="-fx-background-radius: 15;" />
+                              <TextField fx:id="GarduainName" prefHeight="31.0" prefWidth="231.0" promptText="Garduian Name" style="-fx-background-radius: 15;" />
+                              <TextField fx:id="Address" prefHeight="31.0" prefWidth="231.0" promptText="Parmanent Address" style="-fx-background-radius: 15;" />
+                              <TextField fx:id="PhoneNumber" prefHeight="31.0" prefWidth="231.0" promptText="Contact Number" style="-fx-background-radius: 15;" />
+                              <TextField fx:id="Gender" prefHeight="31.0" prefWidth="231.0" promptText="Gender" style="-fx-background-radius: 15;" />
+                              <Separator prefHeight="72.0" prefWidth="300.0" />
+                                        <Button mnemonicParsing="false" onAction="#addStudent" prefHeight="31.0" prefWidth="321.0" style="-fx-background-radius: 12;" text="Add Student" />
+                                        <Button fx:id="clearFields" mnemonicParsing="false" onAction="#clearFields" prefHeight="31.0" prefWidth="321.0" style="-fx-background-radius: 12;" text="Refresh From" />
+                                        <Button fx:id="loadbutton" mnemonicParsing="false" onAction="#loadStudentData" prefHeight="31.0" prefWidth="321.0" style="-fx-background-radius: 12;" text="Load Data" />
+                              <Button fx:id="updatebutton" mnemonicParsing="false" onAction="#update" prefHeight="31.0" prefWidth="321.0" style="-fx-background-radius: 12;" text="Update Data" />
+                              <Button fx:id="deletebutton" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="321.0" style="-fx-background-radius: 12;" text="Delete Data" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            <Tab text="Finance">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="319.0" prefHeight="692.0" prefWidth="1181.0">
+                           <children>
+                              <TableView fx:id="table" onMouseClicked="#ClickOnShowFinance" prefHeight="692.0" prefWidth="1181.0">
+                                <columns>
+                                  <TableColumn fx:id="roomCol" prefWidth="153.0" text="Room No" />
+                                    <TableColumn fx:id="nameCol" prefWidth="200.0" text="Name" />
+                                    <TableColumn fx:id="addCol" minWidth="0.0" prefWidth="174.0" text="Add Amount" />
+                                    <TableColumn fx:id="subtractCol" prefWidth="163.0" text="Subtract Amount" />
+                                    <TableColumn fx:id="currentDueCol" prefWidth="146.0" text="Current Due Amount" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <TextField fx:id="searchBox1" alignment="CENTER" layoutX="34.0" layoutY="43.0" prefHeight="25.0" prefWidth="241.0" promptText="Search Room" />
+                        <TextField fx:id="roomNo" layoutX="36.0" layoutY="142.0" prefHeight="25.0" prefWidth="238.0" />
+                        <TextField fx:id="Name" layoutX="36.0" layoutY="194.0" prefHeight="25.0" prefWidth="238.0" />
+                        <TextField fx:id="AddAmount" layoutX="36.0" layoutY="246.0" prefHeight="25.0" prefWidth="238.0" />
+                        <TextField fx:id="SubtractAmount" layoutX="36.0" layoutY="297.0" prefHeight="25.0" prefWidth="238.0" />
+                        <TextField fx:id="CurrentDue" layoutX="36.0" layoutY="350.0" prefHeight="25.0" prefWidth="238.0" />
+                        <Label layoutX="37.0" layoutY="118.0" text="Room No" />
+                        <Label layoutX="38.0" layoutY="176.0" text="Name" />
+                        <Label layoutX="38.0" layoutY="229.0" text="Add Amount" />
+                        <Label layoutX="38.0" layoutY="280.0" text="Subtract Amount" />
+                        <Label layoutX="38.0" layoutY="331.0" text="Current Due Amount" />
+                        <Button fx:id="Add" layoutX="26.0" layoutY="475.0" mnemonicParsing="false" onAction="#addFinace" prefHeight="25.0" prefWidth="95.0" text="Add Data" />
+                        <Button fx:id="refresh" layoutX="117.0" layoutY="525.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="95.0" text="Refresh Form" />
+                        <Button fx:id="remove" layoutX="27.0" layoutY="582.0" mnemonicParsing="false" onAction="#Delete" prefHeight="25.0" prefWidth="95.0" text="Remove Data" />
+                        <Button fx:id="edited" layoutX="211.0" layoutY="475.0" mnemonicParsing="false" onAction="#updateFinance" prefHeight="25.0" prefWidth="96.0" text="Edited Data" />
+                        <Button fx:id="loadtable" layoutX="211.0" layoutY="582.0" mnemonicParsing="false" onAction="#loadFinanceData" prefHeight="25.0" prefWidth="96.0" text="Load Data" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
